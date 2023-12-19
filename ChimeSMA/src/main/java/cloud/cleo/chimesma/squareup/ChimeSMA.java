@@ -50,6 +50,7 @@ public class ChimeSMA extends AbstractFlow {
         // Start with a welcome message
         final var welcome = PlayAudioAction.builder()
                 .withKey("welcome.wav") // This is always in english
+                .withNextAction(MAIN_MENU)
                 .build();
 
         return welcome;

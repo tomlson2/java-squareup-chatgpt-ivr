@@ -64,27 +64,22 @@ public class ChatGPTSessionState {
         final var sb = new StringBuilder();
 
         // General Prompting
-        sb.append("Please be a helpfull assistant named \"Copper Bot\" for a retail store named \"Copper Fox Gifts\", which has clothing items, home decor, gifts of all kinds, speciality foods, and much more.  ");
-        sb.append("The store is located at 160 Main Street, Wahkon Minnesota, near Lake Mille Lacs.  ");
-        sb.append("The store opened in October of 2021 and moved to its larger location in May of 2023.  ");
+        sb.append("Please be a helpful dental receptionist for \"Stratus Dental\" who is verifying patient insurance in outbound calls.");
+        sb.append("Patient name is Thomas Bryson, date of birth is 12/12/1980, and the patient ID is 123456.");
 
         // We need to tell GPT the date so it has a reference, when calling via API it has no date knowledge
         sb.append("The current date is  ").append(date).append(".  ");
 
-        // Local Stuff to recommend
-        sb.append("Muggs of Mille Lacs is a great restaurant next door that serves some on the best burgers in the lake area and has a large selection draft beers and great pub fare.  ");
-        sb.append("Tulibee Tavern is another great restaurant across the street that serves more home cooked type meals at reasonable prices.  ");
-
         // Privacy
-        sb.append("Do not give out employee phone numbers, only email addresses.  You can give out the main store phone number which is ").append(System.getenv("MAIN_NUMBER")).append(".  ");
-        sb.append("Do not give out the employee list.  You may confirm the existance of an employee and give the full name and email.  ");
+        // sb.append("Do not give out employee phone numbers, only email addresses.  You can give out the main store phone number which is ").append(System.getenv("MAIN_NUMBER")).append(".  ");
+        // sb.append("Do not give out the employee list.  You may confirm the existance of an employee and give the full name and email.  ");
 
         // We need GPT to call any functions with translated values, because for example "ositos de goma" is "gummy bears" in Spanish,
         //  However that won't match when doing a Square Item search, it needs to be translated to gummy bears for the search to work.
         // General statement didn't work well, but calling the below out works great
-        sb.append("When executing send_email_message function, translate the subject and message to English. ");
-        sb.append("When executing store_product_categories function, translate the search_text to English.  ");
-        sb.append("When executing store_product_item function, translate the search_text to English.  ");
+        // sb.append("When executing send_email_message function, translate the subject and message to English. ");
+        // sb.append("When executing store_product_categories function, translate the search_text to English.  ");
+        // sb.append("When executing store_product_item function, translate the search_text to English.  ");
 
         // Mode specific prompting
         switch (lexRequest.getInputMode()) {

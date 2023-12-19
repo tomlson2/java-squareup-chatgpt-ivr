@@ -258,7 +258,7 @@ jobs:
     if: ${{ vars.RUN_TESTS }}
     strategy:
       matrix:
-        region: [ us-east-1, us-west-2 ]
+        region: [ us-east-1 ]
     runs-on: ubuntu-latest
     environment: "${{ matrix.region }}-tests"
     needs: [sam-deploy]

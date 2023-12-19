@@ -5,7 +5,7 @@
     <artifactId>lex-chatgpt-fullfill</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <name>Square Chime Lex ChatGPT Lambda</name>
+    <name>Chime Lex ChatGPT Lambda</name>
     <description>Square Chat GPT Lambda fullfilment Lambda</description>
     
 

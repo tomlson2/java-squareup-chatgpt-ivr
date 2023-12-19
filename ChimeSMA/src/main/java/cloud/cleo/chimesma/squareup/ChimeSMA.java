@@ -50,8 +50,6 @@ public class ChimeSMA extends AbstractFlow {
         // Start with a welcome message
         final var welcome = PlayAudioAction.builder()
                 .withKey("welcome.wav") // This is always in english
-                .withNextAction(openClosed)
-                .withErrorAction(openClosed)
                 .build();
 
         return welcome;
@@ -79,7 +77,7 @@ public class ChimeSMA extends AbstractFlow {
         final var lexBotEN = StartBotConversationAction.builder()
                 .withDescription("ChatGPT English")
                 .withLocale(Locale.forLanguageTag("en-US"))
-                .withContent("You can ask about our products, hours, location, or speak to one of our team members. Tell us how we can help today?")
+                .withContent("Can you help me?")
                 .withSessionAttributesF(attributesFunction)
                 .build();
         botLangMap.put(Language.English, lexBotEN);

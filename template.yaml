@@ -191,7 +191,7 @@ Resources:
         PromptName: welcome.wav
         PromptText: |
             <speak>
-            <break time="2s"/>Thank you for calling Copper Fox Gifts.
+            <break time="2s"/>Hey I'm trying to verify my patient's insurance.
             </speak>
   
   OpenPrompt:
